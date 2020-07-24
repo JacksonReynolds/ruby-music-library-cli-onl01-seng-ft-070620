@@ -49,7 +49,11 @@ class MusicLibraryController
   end #call
 
   def list_songs
+<<<<<<< HEAD
     Song.all.sort {|a,b| a.name <=> b.name}.each_with_index do |song, i|
+=======
+    Song.all.sort {|a,b| a.name <=> b.name}.uniq.each_with_index do |song, i|
+>>>>>>> dad5a1803407ff99815f898f0579e94f99c7e4a4
       puts "#{i+1}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
     end #do
   end #list_songs
@@ -90,10 +94,17 @@ class MusicLibraryController
 
   def play_song
     puts "Which song number would you like to play?"
+<<<<<<< HEAD
     index = gets.chomp.to_i-1
     if (0...Song.all.length-1).include?(index)
       binding.pry
       array = Song.all.sort {|a,b| a.name <=> b.name}
+=======
+    index = gets.chomp.to_i - 1
+    if (0...Song.all.length).include?(index)
+      binding.pry
+      array = Song.all.sort {|a,b| a.name <=> b.name}.uniq
+>>>>>>> dad5a1803407ff99815f898f0579e94f99c7e4a4
       puts "Playing #{array[index].name} by #{array[index].artist.name}"
     end #if
   end #play_song
