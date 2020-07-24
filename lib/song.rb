@@ -16,10 +16,6 @@ class Song
 
   def self.create_from_filename(file_name)
     new_song = self.new_from_filename(file_name)
-<<<<<<< HEAD
-=======
-    new_song.save
->>>>>>> dad5a1803407ff99815f898f0579e94f99c7e4a4
   end #create_from_filename
 
   def self.new_from_filename(file_name)
